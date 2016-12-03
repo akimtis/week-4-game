@@ -15,13 +15,11 @@ var wins = "";
 var losses = "";
 var pepperNumber = [];
 
-
 // function (refresh){
 //   console.log("refresh");
 //   clearInterval(pepperNumber);
 //   clearInterval(randomNumber);
 // };
-
 
 for(var i=1; i <= 4; i++){
   pepperNumber.push(Math.floor(Math.random()*12))
@@ -29,24 +27,11 @@ for(var i=1; i <= 4; i++){
 console.log(pepperNumber);
 
 //assigning a value to each pepper button
-$("#bell").push(pepperNumber[0])
-$("#habanero").push(pepperNumber[1])
-$("#scorpion").push(pepperNumber[2])
-$("#jalapeno").push(pepperNumber[3])
+$("#bell").attr("value", pepperNumber[0]);
+$("#habanero").attr("value",pepperNumber[1])
+$("#scorpion").attr("value", pepperNumber[2])
+$("#jalapeno").attr("value", pepperNumber[3])
 
-//Attempting to declare an input for the value= "" in each button element 
-var pepperButtons = [
-"bell: pepperNumber[0]",
-"habanero: pepperNumber[1]",
-"scorpion: pepperNumber[2]",
-"jalapeno: pepperNumber[3]"
-];
-var pepperButtonValue= document.getElementById("pepperButtons");
-for (var i=0; i < pepperButtons.length; i++) {
-
-  console.log(pepperButtonValue)
-}
-  $('#value-ID').text(pepperButtonValue)
 
 //assign the random button a random number
   for(var i=19; i<120; i++){
@@ -57,7 +42,7 @@ for (var i=0; i < pepperButtons.length; i++) {
 
 //on click of a pepper button add it to the string
 $(".pepper").on("click", function(){
-  socre = score += $(this).attr("value");
+  score = score += $(this).attr("value");
 })
 console.log(score)
 $("#score").text(score)
