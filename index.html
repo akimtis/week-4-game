@@ -2,9 +2,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+ <meta charset="utf-8">
+  <title>A Peck of Pickled Peppers</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  
 </head>
 <body>
+
+<img src="assets/images/chile_feild.jpg" class="background_image" alt="chile_feild">
+<div>
+  <div class="col-sm-12">
+    <div class="jumbotron">
+    <h1>A Peck of Pickled Peppers</h1>
+    <p> You will be given a random number at the start of the game.
+    <br>
+    There are four peppers below. By clicking on a pepper you will add points to your total score.
+    <br>
+    You win by matching the score you create to the random number. You lose if the score goes over the value of the random number.
+    <br>
+    The values of the peppers and random number change each game.
+    </p>
+    </div>
+  </div>
+
+<!--random number div-->
+<div class="col-sm-2">
+  <div class="panel panel-default"> 
+    <button id="randomButton">?</button>
+ </div> 
+</div>
+
+<div class="col-sm-2">
+  <div class="panel panel-default">
+    <button id="score"></button>
+  </div>
+</div>
+
+
+<!--gems div-->
+<div class="col-sm-5">
+  <div class="panel panel-default">
+  <button class="pepper" id="bell">
+  <img src="assets/images/bell.png" class="pepper_images" alt="bell" value="">
+  </button>
+  <button class="pepper" id="habanero">
+  <img src="assets/images/habanero.png" class="pepper_images" alt="habanero" value=""> 
+  </button>
+  <button class="pepper"  id="scorpion">
+  <img src="assets/images/scorpion.png" class="pepper_images" alt="scorpion" value=""> 
+  </button>
+  <button class="pepper" id="jalapeno">
+  <img src="assets/images/jalapeno.png" class="pepper_images" alt="jalapeno" value=""> 
+  </button>
+  </div>
+</div>
+
+<div class="col-sm-2">
+  <div class="panel panel-default">
+    <button id="wins_losses">
+      <p>Wins: </p>
+      <p>Losses: </p>
+    </button> 
+  </div>
+</div>
+
+<footer>
+    <p>@Copyright 2016 Anna Kimtis</p>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+
+<script src="assets/javascript/game.js"></script>
 
 </body>
 </html>
