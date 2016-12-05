@@ -9,6 +9,13 @@
 //If value is equal, denote win and reset all values
 //If value is greater than the random number, denote loss and reset all values.
 
+//attempt at making a way to reset the randomly generated buttons
+// function (refresh){
+// console.log("refresh");
+// clearInterval(pepperNumber);
+// clearInterval(randomNumber);
+// };
+
 //define the variables
 var score = 0;
 var wins = 0;
@@ -16,25 +23,19 @@ var losses = 0;
 var pepperNumber = [];
 var display = document.querySelector("#wins_losses");
 
-// function (refresh){
-// console.log("refresh");
-// clearInterval(pepperNumber);
-// clearInterval(randomNumber);
-// };
-
 function displayResults(){
-        var string = 'Wins: ' + wins;
+        var string = 'Wins: ' + wins +'     ';
         string += 'Losses: ' + losses;
         $("#wins_losses").text(string);
       }
 
-
+//generate random numbers for the pepper buttons
 for(var i=1; i <= 4; i++){
   pepperNumber.push(Math.floor(Math.random()*12))
 }
 console.log(pepperNumber);
 
-//assigning a value to each pepper button
+//assign a value to each pepper button
 $("#bell").attr("data-value", pepperNumber[0]);
 $("#habanero").attr("data-value",pepperNumber[1])
 $("#scorpion").attr("data-value", pepperNumber[2])
@@ -60,6 +61,7 @@ if (score == randomNumber) {
   alert("You Win!");
   score = 0;
   displayResults (wins, losses)
+  //refresh()
   }
   
   if (score > randomNumber) {
@@ -67,10 +69,11 @@ if (score == randomNumber) {
   alert("You Lose!");
   score = 0;
   displayResults (wins, losses)
+  //refresh()
   }
 });
 
-// refresh()
+
 
 // // var randomRange = [];
 //   for (var i = 19; i <= 120; i++) {
