@@ -11,8 +11,8 @@
 
 
 var score = 0;
-var wins = "";
-var losses = "";
+var wins = 0;
+var losses = 0;
 var pepperNumber = [];
 
 // function (refresh){
@@ -27,26 +27,25 @@ for(var i=1; i <= 4; i++){
 console.log(pepperNumber);
 
 //assigning a value to each pepper button
-$("#bell").attr("value", pepperNumber[0]);
-$("#habanero").attr("value",pepperNumber[1])
-$("#scorpion").attr("value", pepperNumber[2])
-$("#jalapeno").attr("value", pepperNumber[3])
+$("#bell").attr("data-value", pepperNumber[0]);
+$("#habanero").attr("data-value",pepperNumber[1])
+$("#scorpion").attr("data-value", pepperNumber[2])
+$("#jalapeno").attr("data-value", pepperNumber[3])
 
 
 //assign the random button a random number
-  for(var i=19; i<120; i++){
-    var randomNumber= Math.floor(Math.random()*101)
+for(var i=19; i<120; i++){
+  var randomNumber= Math.floor(Math.random()*101)
   }
   console.log(randomNumber);
   $("#randomButton").html(randomNumber);
 
 //on click of a pepper button add it to the string
 $(".pepper").on("click", function(){
-  score = score += $(this).attr("value");
-})
-console.log(score)
-$("#score").text(score)
-
+  score = score += parseInt($(this).attr("data-value"));
+  console.log(score)
+  $("#score").text(score);
+  
 //determine win and lose conditions and actions
 if (score == randomNumber) {
   wins++;
@@ -59,7 +58,7 @@ if (score == randomNumber) {
   alert("You Lose!");
   score = 0;
   }
-
+});
 //refresh()
 
 // // var randomRange = [];
