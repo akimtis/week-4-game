@@ -9,17 +9,25 @@
 //If value is equal, denote win and reset all values
 //If value is greater than the random number, denote loss and reset all values.
 
-
+//define the variables
 var score = 0;
 var wins = 0;
 var losses = 0;
 var pepperNumber = [];
+var display = document.querySelector("#wins_losses");
 
 // function (refresh){
-//   console.log("refresh");
-//   clearInterval(pepperNumber);
-//   clearInterval(randomNumber);
+// console.log("refresh");
+// clearInterval(pepperNumber);
+// clearInterval(randomNumber);
 // };
+
+function displayResults(){
+        var string = 'Wins: ' + wins;
+        string += 'Losses: ' + losses;
+        $("#wins_losses").text(string);
+      }
+
 
 for(var i=1; i <= 4; i++){
   pepperNumber.push(Math.floor(Math.random()*12))
@@ -45,21 +53,24 @@ $(".pepper").on("click", function(){
   score = score += parseInt($(this).attr("data-value"));
   console.log(score)
   $("#score").text(score);
-  
+
 //determine win and lose conditions and actions
 if (score == randomNumber) {
   wins++;
   alert("You Win!");
   score = 0;
+  displayResults (wins, losses)
   }
   
   if (score > randomNumber) {
   losses++;
   alert("You Lose!");
   score = 0;
+  displayResults (wins, losses)
   }
 });
-//refresh()
+
+// refresh()
 
 // // var randomRange = [];
 //   for (var i = 19; i <= 120; i++) {
